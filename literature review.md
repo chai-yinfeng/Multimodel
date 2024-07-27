@@ -1,33 +1,40 @@
-## Related Work
+# Related work
 
+## **Show, Attend and Tell: Neural Image Caption Generation with Visual Attention**
 Xu et al. (2015) in "Show, Attend and Tell: Neural Image Caption Generation with Visual Attention" introduce a model that incorporates visual attention mechanisms—both soft and hard attention—to dynamically focus on different parts of images, significantly enhancing caption quality and contextual adaptability, validated on standard datasets like Flickr8k and Microsoft COCO.
 
+**refined**: Xu and colleagues address the challenge of generating contextually relevant and accurate image captions by introducing a visual attention mechanism. Their model utilizes both soft and hard attention to dynamically focus on pertinent parts of images, enhancing the relevance and detail of the generated captions. The model demonstrated superior performance on standard image captioning datasets such as Flickr8k and Microsoft COCO, setting new benchmarks for caption quality and adaptability.
+
+---
+##  **Self-critical Sequence Training for Image Captioning**
 Rennie et al. (2017) in "Self-critical Sequence Training for Image Captioning" employ the REINFORCE algorithm with a unique self-assessment strategy, using the model's test-time output as a baseline to improve REINFORCE's application in RL and enhance performance in non-differentiable metric optimization on the MSCOCO dataset.
 
-## Content (completed part)
+**refined**: Rennie et al. tackle the optimization of non-differentiable metrics in image caption generation, which traditional methods struggle with due to exposure bias and reward sparsity. They employ the REINFORCE algorithm enhanced with a self-critical sequence training strategy, using the model's own output at test time as a baseline for reward normalization. This approach led to significant improvements in captioning performance on the MSCOCO dataset, establishing a new state-of-the-art by effectively training on direct evaluation metrics.
 
-1502.03044v3: Show, Attend and Tell: Neural Image Caption Generation with Visual Attention
+---
+## **Ask, Attend and Answer: Exploring Question-Guided Spatial Attention for Visual Question Answering**
+Huijuan Xu and Kate Saenko addressed the challenge of spatial reasoning in Visual Question Answering (VQA) tasks by proposing a new model that integrates deep learning and attention mechanisms, named the Spatial Memory Network (SMem-VQA). This model utilizes a multi-hop attention mechanism, iteratively focusing on key areas of the image through a memory network to address specific query requirements. Experiments on standard VQA datasets such as DAQUAR and VQA demonstrate that the SMem-VQA model outperforms existing methods in complex spatial reasoning tasks, particularly in terms of accuracy and relevance to the questions posed.
 
-1612.00563v2: Self-critical Sequence Training for Image Captioning
+---
+## **Bi-Directional Attention Flow for Machine Comprehension**
+Minjoon Seo et al. (2017) in aimed to enhance the comprehension capabilities of machine learning models in question-answering systems by addressing limitations in understanding the context of questions and answers. They introduced the Bi-Directional Attention Flow (BiDAF) model, which employs a novel bi-directional attention mechanism that enriches the mutual interaction between the context and the query for more accurate comprehension. BiDAF demonstrated superior performance, setting new state-of-the-art benchmarks on the SQuAD dataset by significantly improving accuracy in machine comprehension tasks.
 
-### Show, Attend and Tell: Neural Image Caption Generation with Visual Attention
+---
+## **Learning Convolutional Text Representations for Visual Question Answering**
+Zhengyang Wang and Shuiwang Ji address the challenge of learning text representations for Visual Question Answering (VQA) tasks, critiquing traditional reliance on Recurrent Neural Networks (RNNs) and proposing the use of Convolutional Neural Networks (CNNs) for more effective text processing. They introduce a novel model named “CNN Inception + Gate,” which incorporates Inception modules and gating mechanisms to extract text features. This model utilizes convolutional kernels of varying sizes to capture essential textual information and employs gates to optimize the flow of information. Experimental results demonstrate that this CNN-based model not only improves the quality of question representations but also significantly enhances overall VQA accuracy, with fewer parameters and faster computation compared to traditional RNN-based models.
 
-In the fields of computer vision and natural language processing, automatic image caption generation has always been a challenging research topic. Xu et al. (2015), in their paper "Show, Attend and Tell: Neural Image Caption Generation with Visual Attention," introduced a neural network model incorporating a visual attention mechanism that significantly enhances the quality and relevance of image descriptions.
+---
+## **Structured Attentions for Visual Question Answering**
+The authors tackle the limited effective receptive field in CNNs for Visual Question Answering (VQA), which struggles with complex spatial relationships between image regions. They introduce a novel visual attention model using a grid-structured Conditional Random Field (CRF) to capture inter-region dependencies, implemented through Mean Field and Loopy Belief Propagation algorithms as recurrent neural network layers. The model significantly improves upon baseline models, enhancing accuracy on the CLEVR dataset by 9.5% and on the VQA dataset by 1.25%.
 
-Early methods of image caption generation relied on simple visual features and predefined templates. With the advancement of deep learning technologies, researchers began to use a combination of convolutional neural networks (CNNs) and recurrent neural networks (RNNs) in an encoder-decoder architecture to generate descriptions, as seen in the studies by Vinyals et al. (2015) and Karpathy and Fei-Fei (2015). However, these methods typically produce static descriptions that lack contextual adaptability.
+---
+## **iVQA: Inverse Visual Question Answering**
+The authors introduced the task of Inverse Visual Question Answering (iVQA), aimed at generating questions corresponding to given image and answer pairs to enhance the model's understanding of image content and language generation capabilities. They developed a model based on a dynamic multimodal attention mechanism, which adjusts focus on image regions during question generation to better integrate image content and provided answers. Experimental results demonstrated that the model can generate diverse and highly relevant questions, validated by a newly proposed ranking-based evaluation metric, confirming its effectiveness and superiority in the iVQA task.
 
-The introduction of attention mechanisms allows the model to dynamically focus on different parts of the image, thereby generating more precise and enriched descriptions. Xu et al. (2015)'s study is pioneering in this field, proposing two types of attention mechanisms: soft attention, which is differentiable and allows for training using standard backpropagation algorithms; and hard attention, which uses a stochastic sampling method optimized through reinforcement learning.
+---
+## **Meshed-Memory Transformer for Image Captioning**
+The authors addressed the challenge of enhancing image captioning by improving the integration of visual and textual data, as existing models were insufficient in capturing complex inter-modal relationships. They proposed the Meshed-Memory Transformer (M2 Transformer), a novel architecture that utilizes a memory-augmented encoder and a meshed decoder to exploit both low- and high-level visual features while incorporating learned a priori knowledge. The M2 Transformer achieved state-of-the-art performance on the COCO dataset, demonstrating its effectiveness in handling novel objects and setting new benchmarks for image captioning tasks.
 
-In the experimental section, Xu and colleagues utilized standard image description datasets, such as Flickr8k, Flickr30k, and Microsoft COCO, to validate the effectiveness of the model. The results indicate that the model with the visual attention mechanism surpasses previous methods on multiple evaluation metrics, particularly in handling complex scenes, where it can generate more detailed and accurate descriptions. Moreover, Xu et al. visualized the attention weights and found that the model's learned alignment highly corresponds with human intuition, enhancing the interpretability of this mechanism.
-
-The work of Xu et al. (2015) not only advances the technology of image caption generation but also provides a powerful tool for deepening the understanding of the interaction between vision and language. Their research outcomes demonstrate the importance of attention mechanisms in enhancing machines' capabilities in understanding visual content and generating language, laying a solid foundation for future research.
-
-### Self-critical Sequence Training for Image Captioning
-
-In the task of image caption generation, traditional encoder-decoder architectures often face challenges due to exposure bias during training and the inability to directly optimize non-differentiable sequence-level evaluation metrics. To overcome these limitations, recent research has begun to explore the application of Reinforcement Learning (RL) techniques to image caption generation, enabling direct optimization of evaluation metrics and thus improving model performance.
-
-The work of Rennie et al. (2017) in "Self-critical Sequence Training for Image Captioning" introduces a method known as Self-critical Sequence Training (SCST), which utilizes the REINFORCE algorithm from RL. Unlike traditional applications, SCST employs a unique self-assessment strategy by using the model's output at test time as the reward baseline to normalize rewards during the training process. It dynamically adjusts rewards so that only those samples that perform better than the current test system receive positive weight, while underperforming samples are suppressed.
-
-This self-assessment algorithm allows for more effective baselining of the REINFORCE algorithm for policy-gradient based RL and more effective training on non-differentiable metrics, leading to significant improvements in captioning performance on MSCOCO—the results on the MSCOCO evaluation server establish a new state-of-the-art for the task. The self-critical approach, which normalizes the reward obtained by sampled sentences with the reward obtained by the model under the test-time inference algorithm, is intuitive and avoids the need to estimate both action-dependent and action-independent reward functions.
-
-The research by Rennie et al. not only enhances the quality of image caption generation but also provides an effective strategy for using reinforcement learning to optimize non-differentiable metrics. Overall, the SCST method demonstrates its strong potential and wide applicability both theoretically and in practical applications, providing new directions for future research.
+---
+## **X-Linear Attention Networks for Image Captioning**
+The authors aim to address how to effectively integrate visual and textual information in image caption generation, specifically how to enhance model performance through high-order feature interactions. A new attention module, the X-Linear Attention Block, is proposed. This module fully utilizes bilinear pooling to capture second-order interactions between either single-modal or multimodal features, and by stacking multiple attention blocks, it simulates higher-order and even infinite-order feature interactions. On the COCO dataset, the newly proposed X-Linear Attention Network (X-LAN) achieved unprecedented performance, particularly on the CIDEr evaluation metric, demonstrating its effectiveness in handling complex multimodal reasoning tasks in image caption generation.
