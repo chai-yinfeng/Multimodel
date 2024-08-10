@@ -38,3 +38,21 @@ The authors addressed the challenge of enhancing image captioning by improving t
 ---
 ## **X-Linear Attention Networks for Image Captioning**
 The authors aim to address how to effectively integrate visual and textual information in image caption generation, specifically how to enhance model performance through high-order feature interactions. A new attention module, the X-Linear Attention Block, is proposed. This module fully utilizes bilinear pooling to capture second-order interactions between either single-modal or multimodal features, and by stacking multiple attention blocks, it simulates higher-order and even infinite-order feature interactions. On the COCO dataset, the newly proposed X-Linear Attention Network (X-LAN) achieved unprecedented performance, particularly on the CIDEr evaluation metric, demonstrating its effectiveness in handling complex multimodal reasoning tasks in image caption generation.
+
+---
+
+## LayoutLMv2: Multi-modal Pre-training for Visually-rich Document Understanding
+
+Xu et al. (2022) introduced LayoutLMv2, a multi-modal pre-training model designed to enhance the understanding of visually-rich documents, particularly in handling interactions between text, layout, and image information. The model integrates an improved Transformer architecture, introducing a spatial-aware self-attention mechanism and new pre-training tasks (such as text-image alignment and matching) to learn deep interactions across modalities. LayoutLMv2 demonstrated significant performance improvements on various visually-rich document understanding tasks, setting new state-of-the-art results on datasets like FUNSD, CORD, and SROIE, showcasing its effectiveness and potential for application.
+
+---
+
+## Beyond a Pre-Trained Object Detector: Cross-Modal Textual and Visual Context for Image Captioning
+
+In their research, Kuo and Kira address the limitations of relying solely on pre-trained object detectors for image captioning, which often miss crucial contextual relationships and scene details. They propose an enhanced approach utilizing the CLIP model for cross-modal retrieval of textual descriptions that supplement the detected visual content, and an image conditioning module to dynamically adjust feature representations. Their methodology significantly improves the descriptive accuracy, achieving a notable increase of 7.5% in CIDEr and 1.3% in BLEU-4 scores over state-of-the-art models, demonstrating its effectiveness in producing more contextually rich and grounded captions.
+
+---
+
+## Transformer-Based Multi-Modal Proposal and Re-Rank for Wikipedia Image-Caption Matching
+
+In their research, Messina et al. address the challenge of matching images with captions on Wikipedia, where images often lack contextual descriptions. They introduce a two-stage Transformer-based model consisting of a Multi-modal Caption Proposal (MCProp) model for initial filtering and a Caption Re-Rank (CRank) model for fine-tuning the selections. Their approach achieved notable results, securing the fifth position in a Kaggle competition, demonstrating the effectiveness of their cascading models in improving the accessibility and relevance of multimedia content on large online platforms.
