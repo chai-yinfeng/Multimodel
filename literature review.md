@@ -56,3 +56,21 @@ In their research, Kuo and Kira address the limitations of relying solely on pre
 ## Transformer-Based Multi-Modal Proposal and Re-Rank for Wikipedia Image-Caption Matching
 
 In their research, Messina et al. address the challenge of matching images with captions on Wikipedia, where images often lack contextual descriptions. They introduce a two-stage Transformer-based model consisting of a Multi-modal Caption Proposal (MCProp) model for initial filtering and a Caption Re-Rank (CRank) model for fine-tuning the selections. Their approach achieved notable results, securing the fifth position in a Kaggle competition, demonstrating the effectiveness of their cascading models in improving the accessibility and relevance of multimedia content on large online platforms.
+
+---
+
+## Dual Memory Networks: A Versatile Adaptation Approach for Vision-Language Models
+
+The authors aimed to address the challenge of effectively adapting pre-trained vision-language models (like CLIP) to various downstream tasks, specifically focusing on zero-shot, few-shot, and training-free few-shot adaptation scenarios. They introduced the Dual Memory Networks (DMN), comprising dynamic and static memory components, which allow the model to adapt to different task settings by storing and utilizing historical test data and training data features. The DMN outperformed existing methods by over 3% in the zero-shot setting and showed superior results even against methods that use external training data, proving its effectiveness across different scenarios.
+
+---
+## MeaCap: Memory-Augmented Zero-shot Image Captioning
+The authors aim to address the limitations of zero-shot image captioning methods, which often suffer from hallucinations (imaginary information) or a lack of generalization when trained only on textual data. They propose the MeaCap framework, which introduces a memory-augmented mechanism using an external textual memory to retrieve and filter key concepts highly related to the given image, thereby generating more accurate and world-knowledge-enriched captions. The MeaCap framework outperforms existing methods in reducing hallucinations and improving caption accuracy across multiple benchmarks, particularly in zero-shot, in-domain, and cross-domain settings.
+
+---
+## Efficient Vision-Language Pre-training by Cluster Masking
+The authors aimed to improve the efficiency and quality of vision-language pre-training by addressing the redundancy and inefficiency in current image masking strategies during contrastive learning. They introduced a cluster masking strategy, which masks clusters of visually similar image patches, thereby enhancing the representation learning by forcing the model to predict words for masked visual structures using context. The proposed method outperforms existing masking strategies like FLIP in terms of representation quality, while also speeding up the training process by reducing the amount of data used per image.
+
+---
+## SCSC: Spatial Cross-scale Convolution Module to Strengthen both CNNs and Transformers
+The authors aimed to address the limitations of both CNNs and Transformers in capturing diverse spatial features efficiently, specifically targeting the inefficiency of large dense kernels and the challenges in capturing local features with large receptive fields. They introduced the Spatial Cross-scale Convolution Module (SCSC), which utilizes a wide range of kernel sizes and an efficient spatial embedding module to capture both microscopic and macroscopic feature representations while maintaining computational efficiency. The SCSC module demonstrated superior performance across various tasks, improving accuracy while significantly reducing computational costs and model parameters, making traditional CNNs competitive with advanced Transformers.
